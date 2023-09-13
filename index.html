@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/dist/output.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Document</title>
+    <!-- flowbite -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary: "#06bbcc";
+      }
+      body::-webkit-scrollbar {
+        display: none;
+      }
+      .card::after {
+        background: #a82682;
+        transform: skewY(-174deg);
+        content: "";
+        height: 130px;
+        position: absolute;
+        top: -89px;
+        left: 0;
+        width: 100%;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+
+        box-shadow: 0 -26px 12px transparent;
+        outline: 1px solid transparent;
+      }
+      .section-title::after {
+        position: absolute;
+        content: "";
+        width: calc(100% + 120px);
+        height: 2px;
+        bottom: 9px;
+        left: -60px;
+        background: #100e43;
+        z-index: -1;
+      }
+      .section-title::before {
+        position: absolute;
+        content: "";
+        width: calc(100% + 80px);
+        height: 1px;
+        top: 8px;
+        left: -43px;
+        background: #100e43;
+        z-index: -1;
+      }
+    </style>
+  </head>
+  <body class="font-outfit">
+    <!-- vsm:bg-pink-950 sm:bg-yellow-800 md:bg-blue-800 lg:bg-orange-400 xl:bg-lime-700 xxl:bg-slate-700 -->
+    <!-- <div class="overflow-hidden"> -->
+    <div class="overflow-hidden">
+      <nav
+        class="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 sticky z-50 top-0"
+      >
+        <div class="flex flex-wrap items-center justify-between mx-auto p-4">
+          <a href="#" class="flex items-center">
+            <img
+              src="/img/logo/logo1.jpg"
+              class="w-24 aspect-auto mr-3"
+              alt="Flowbite Logo"
+            />
+            <!-- <span
+              class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
+              >Flowbite</span> -->
+          </a>
+          <button
+            data-collapse-toggle="navbar-dropdown"
+            type="button"
+            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            aria-controls="navbar-dropdown"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="w-5 h-5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 17 14"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M1 1h15M1 7h15M1 13h15"
+              />
+            </svg>
+          </button>
+          <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
+            <ul
+              class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
+            >
+              <li>
+                <a
+                  href="#"
+                  class="block text-xl font-bold py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent"
+                  aria-current="page"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <button
+                  id="dropdownNavbarLink"
+                  data-dropdown-toggle="dropdownNavbar"
+                  class="flex z-50 items-center justify-between text-xl font-bold w-full py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
+                >
+                  Dropdown
+                  <svg
+                    class="w-2.5 h-2.5 ml-2.5"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 10 6"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="m1 1 4 4 4-4"
+                    />
+                  </svg>
+                </button>
+                <!-- Dropdown menu -->
+                <div
+                  id="dropdownNavbar"
+                  class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
+                >
+                  <ul
+                    class="py-2 text-sm text-gray-700 dark:text-gray-400"
+                    aria-labelledby="dropdownLargeButton"
+                  >
+                    <li>
+                      <a
+                        href="#"
+                        class="block text-xl font-bold px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                        >Dashboard</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="block text-xl font-bold px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                        >Settings</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="block text-xl font-bold px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                        >Earnings</a
+                      >
+                    </li>
+                  </ul>
+                  <div class="py-1">
+                    <a
+                      href="#"
+                      class="block text-xl font-bold px-4 py-2 text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                      >Price</a
+                    >
+                  </div>
+                </div>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block text-xl font-bold py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block py-2 pl-3 text-xl font-bold pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                  >Pricing</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block py-2 pl-3 text-xl font-bold pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- navbar DIV end -->
+
+      <!-- carosel start -->
+
+      <div
+        id="default-carousel"
+        class="relative w-full h-full"
+        data-carousel="slide"
+      >
+        <!-- Carousel wrapper -->
+        <div class="relative overflow-hidden rounded-lg w-full aspect-[2.45]">
+          <!-- Item 1 -->
+          <div
+            class="wrapper hidden bg-[url('/img/images/carousel-11.jpg')] bg-cover duration-700 ease-in-out h-full"
+            data-carousel-item
+          >
+            <!-- -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 -->
+            <!-- <img src="/img/images/carousel-1.jpg" class="blur-sm to-black absolute  block w-full h-full" alt="..."> -->
+            <div class="grid ml-40 mt-60 pr-[52rem]">
+              <h1 class="mt-6 text-xl text-primary font-bold uppercase">
+                best online cources
+              </h1>
+              <h1 class="mt-6 text-6xl font-extrabold text-white">
+                The best online learning Platform
+              </h1>
+              <p class="mt-6 text-xl font-semibold text-white">
+                Lorem ipsum sit autem voluptatibus ipsum, quam neque sint
+                consectetur vel cupiditate voluptas reiciendis error saepe et
+                exercitationem.
+              </p>
+              <div class="flex mt-6">
+                <button class="bg-primary text-white px-12 py-4 font-bold">
+                  Read more
+                </button>
+                <button class="bg-white px-12 py-4 text-black font-bold ml-4">
+                  Join Now
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Item 2 -->
+          <div
+            class="wrapper hidden bg-[url('/img/images/carousel-11.jpg')] bg-cover duration-700 ease-in-out h-full"
+            data-carousel-item
+          >
+            <!-- -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 -->
+            <!-- <img src="/img/images/carousel-1.jpg" class="blur-sm to-black absolute  block w-full h-full" alt="..."> -->
+            <div class="ml-40 mt-60 pr-[52rem]">
+              <h1 class="mt-6 text-xl text-primary font-bold uppercase">
+                best online cources
+              </h1>
+              <h1 class="mt-6 text-6xl font-extrabold text-white">
+                The best online learning Platform
+              </h1>
+              <p class="mt-6 text-xl font-semibold text-white">
+                Lorem ipsum sit autem voluptatibus ipsum, quam neque sint
+                consectetur vel cupiditate voluptas reiciendis error saepe et
+                exercitationem.
+              </p>
+              <div class="flex mt-6">
+                <button class="bg-primary text-white px-12 py-4 font-bold">
+                  Read more
+                </button>
+                <button class="bg-white px-12 py-4 text-black font-bold ml-4">
+                  Join Now
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button
+          type="button"
+          class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+          data-carousel-prev
+        >
+          <span
+            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+          >
+            <svg
+              class="w-4 h-4 text-white dark:text-gray-800"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 6 10"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 1 1 5l4 4"
+              />
+            </svg>
+            <span class="sr-only">Previous</span>
+          </span>
+        </button>
+        <button
+          type="button"
+          class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+          data-carousel-next
+        >
+          <span
+            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+          >
+            <svg
+              class="w-4 h-4 text-white dark:text-gray-800"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 6 10"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m1 9 4-4-4-4"
+              />
+            </svg>
+            <span class="sr-only">Next</span>
+          </span>
+        </button>
+      </div>
+
+      <!-- carosel end -->
+      <!-- <section class="text-center" id="zoom-in">
+        <h1>jkfjkfd</h1>
+      </section> -->
+      <!-- Categories Start -->
+      <div class="py-5">
+        <div class="mx-24">
+          <div class="text-center">
+            <h6
+              class="section-title relative inline-block uppercase px-4 bg-white font-bold"
+            >
+              Categories
+            </h6>
+            <h1 class="mb-5 text-3xl font-bold">Courses Categories</h1>
+          </div>
+
+          <div class="orange flex w-full h-full gap-4">
+            <div class="w-[60%] flex flex-col h-[40rem] overflow-hidden gap-4">
+              <div class="w-full overflow-hidden relative">
+                <img
+                  class="bg-cover w-full cursor-pointer transition-all duration-700 ease-in-out hover:scale-105"
+                  src="/img/images/cat-1.jpg"
+                  alt=""
+                />
+                <div class="py-1 px-3 bg-white absolute bottom-1 right-1">
+                  <h1 class="text-2xl font-bold">Web Design</h1>
+                  <p class="text-primary text-center">49 Cource</p>
+                </div>
+              </div>
+              <div class="w-full flex gap-4">
+                <div class="animate w-1/2 h-80 overflow-hidden relative">
+                  <img
+                    class="bg-cover h-full w-full cursor-pointer transition-all duration-700 ease-in-out hover:scale-105"
+                    src="/img/images/cat-2.jpg"
+                    alt=""
+                  />
+                  <div class="py-1 px-3 bg-white absolute bottom-1 right-1">
+                    <h1 class="text-2xl font-bold">Web Design</h1>
+                    <p class="text-primary text-center">49 Cource</p>
+                  </div>
+                </div>
+                <div class="w-1/2 h-80 overflow-hidden relative">
+                  <img
+                    class="bg-cover h-full w-full cursor-pointer transition-all duration-700 ease-in-out hover:scale-105"
+                    src="/img/images/cat-3.jpg"
+                    alt=""
+                  />
+                  <div class="py-1 px-3 bg-white absolute bottom-1 right-1">
+                    <h1 class="text-2xl font-bold">Web Design</h1>
+                    <p class="text-primary text-center">49 Cource</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="w-[40%] h-[40rem] overflow-hidden relative">
+              <img
+                class="bg-cover h-full w-full cursor-pointer transition-all duration-700 ease-in-out hover:scale-105"
+                src="/img/images/cat-4.jpg"
+                alt=""
+              />
+              <div class="py-1 px-3 bg-white absolute bottom-1 right-1">
+                <h1 class="text-2xl font-bold">Web Design</h1>
+                <p class="text-primary text-center">49 Cource</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Categories end -->
+      <!-- cource catagory end -->
+      <!-- ===================================testmonial start ======================== -->
+      <div
+        class="bg-[url('/img/images/cls1.jpg')] bg-fixed bg-cover w-full mt-56"
+      >
+        <div class="flex mx-24">
+          <div class="w-[40%] relative bg-[#a82682]">
+            <div
+              class="card bg-[#a82682] relative z-50 justify-center text-center w-full py-10"
+            >
+              <h1 class="mt-6 font-bold text-white text-5xl">Admission</h1>
+              <h1 class="mt-6 font-bold text-8xl text-white">OPEN</h1>
+              <h1 class="mt-6 text-white text-5xl font-bold">2023 - 24</h1>
+              <button
+                class="mt-6 px-36 py-2 border-2 text-2xl border-white text-white"
+              >
+                Admission Open
+              </button>
+            </div>
+          </div>
+
+          <div class="w-[60%]">
+            <div
+              id="default-carousel"
+              class="m-0 p-0 h-full"
+              data-carousel="slide"
+            >
+              <!-- Carousel wrapper -->
+              <div
+                class="text-center w-full h-full flex justify-center items-center"
+              >
+                <div class="relative w-full h-full rounded-lg overflow-hidden">
+                  <!-- Item 1 -->
+                  <div
+                    class="hidden h-80 px-40 my-auto duration-700 ease-in-out"
+                    data-carousel-item
+                  >
+                    <h1 class="mt-6 text-4xl text-white font-bold">
+                      Our Happy Students says
+                    </h1>
+                    <h1
+                      class="mt-6 text-white italic text-xl font-medium leading-8"
+                    >
+                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                      Alias molestiae veniam reprehenderit, dignissimos atque
+                      dicta distinctio ab amet accusantium incidunt minus ipsum
+                      vero obcaecati iusto quam voluptas, cupiditate sint ea
+                      fuga natus. Lorem, ipsum dolor sit
+                    </h1>
+                    <h1 class="mt-6 text-3xl text-white font-bold">
+                      Neeraj kumar
+                    </h1>
+                  </div>
+                  <!-- Item 2 -->
+                  <div
+                    class="hidden h-80 px-40 my-auto duration-700 ease-in-out"
+                    data-carousel-item
+                  >
+                    <h1 class="mt-6 text-4xl text-white font-bold">
+                      Our Happy Students says
+                    </h1>
+                    <h1 class="mt-6 text-white italic text-xl font-medium">
+                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                      Alias molestiae veniam reprehenderit, dignissimos atque
+                      dicta distinctio ab amet accusantium incidunt minus ipsum
+                      vero obcaecati iusto quam voluptas, cupiditate sint ea
+                      fuga natus. Lorem, ipsum dolor sit
+                    </h1>
+                    <h1 class="mt-6 text-3xl text-white font-bold">
+                      Neeraj kumar
+                    </h1>
+                  </div>
+                  <!-- Item 3 -->
+                  <div
+                    class="hidden h-80 px-40 my-auto duration-700 ease-in-out"
+                    data-carousel-item
+                  >
+                    <h1 class="mt-6 text-4xl text-white font-bold">
+                      Our Happy Students says
+                    </h1>
+                    <h1 class="mt-6 text-white italic text-xl font-medium">
+                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                      Alias molestiae veniam reprehenderit, dignissimos atque
+                      dicta distinctio ab amet accusantium incidunt minus ipsum
+                      vero obcaecati iusto quam voluptas, cupiditate sint ea
+                      fuga natus. Lorem, ipsum dolor sit
+                    </h1>
+                    <h1 class="mt-6 text-3xl text-white font-bold">
+                      Neeraj kumar
+                    </h1>
+                  </div>
+                  <!-- Slider indicators -->
+                  <div
+                    class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-20 left-1/2"
+                  >
+                    <button
+                      type="button"
+                      class="w-11 h-[6px]"
+                      aria-current="true"
+                      aria-label="Slide 1"
+                      data-carousel-slide-to="0"
+                    ></button>
+                    <button
+                      type="button"
+                      class="w-11 h-[6px]"
+                      aria-current="false"
+                      aria-label="Slide 2"
+                      data-carousel-slide-to="1"
+                    ></button>
+                    <button
+                      type="button"
+                      class="w-11 h-[6px]"
+                      aria-current="false"
+                      aria-label="Slide 3"
+                      data-carousel-slide-to="2"
+                    ></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ===================================testmonial end ======================== -->
+      <!-- <section id="zoom-out" class="flex justify-center items-center">
+        <h2>text zoom-out</h1>
+      </section>
+
+      <section id="zoom-in" class="flex justify-center items-center">
+        <h2>text zoom-out</h2>
+      </section> -->
+    </div>
+    <!-- gsap start -->
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js?r=5426"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js"></script>
+    <!-- flowbite -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+    <script src="/js/script.js"></script>
+  </body>
+</html>
